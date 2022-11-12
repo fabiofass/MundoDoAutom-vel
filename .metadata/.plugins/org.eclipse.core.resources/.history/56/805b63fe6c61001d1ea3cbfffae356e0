@@ -1,0 +1,61 @@
+package com.LojaDeCarros;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class Loja {
+	static Scanner imput = new Scanner(System.in);
+	ArrayList<Carro>cadastro;
+	private Pessoa proprietarioLoja;
+	private int quantidade;
+	
+	public Loja() {
+		
+	}
+	
+	public Loja(ArrayList<Carro> cadastro, Pessoa proprietarioLoja, int quantidade) {
+		this.cadastro = cadastro;
+		this.proprietarioLoja = proprietarioLoja;
+		this.quantidade = quantidade;
+	}
+	
+	public ArrayList<Carro> getCadastro() {
+		return cadastro;
+	}
+	public void setCadastro(ArrayList<Carro> cadastro) {
+		this.cadastro = cadastro;
+	}
+	public Pessoa getProprietarioLoja() {
+		return proprietarioLoja;
+	}
+	public void setProprietarioLoja(Pessoa proprietarioLoja) {
+		this.proprietarioLoja = proprietarioLoja;
+	}
+	public int getQuantidade() {
+		return quantidade;
+	}
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+	@Override
+	public String toString() {
+		return "Loja [cadastro=" + cadastro + ", proprietarioLoja=" + proprietarioLoja + ", quantidade=" + quantidade
+				+ "]";
+	}
+	public static void cadastrarCarro() {
+		Carro carro = new Carro();
+		System.out.println("Marca: ");
+		carro.setMarca(imput.next());
+		System.out.println("Modelo");
+		carro.setModelo(imput.next());
+		System.out.println("Placa: ");
+		carro.setPlaca(imput.next());
+		System.out.println("Ano: ");
+		carro.setAno(imput.nextInt());
+		System.out.println("Valor aproximado: ");
+		carro.setValorAproximado(imput.nextFloat());
+		
+	}	
+
+}
