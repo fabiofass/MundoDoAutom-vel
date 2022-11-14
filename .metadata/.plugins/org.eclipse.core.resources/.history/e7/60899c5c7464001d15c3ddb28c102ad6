@@ -75,7 +75,6 @@ public class Loja {
 		System.out.println("\n");
 		System.out.println("------------------------------------------------------");
 		Operacao.operacoes();
-		imput.close();
 
 	}
 
@@ -110,14 +109,11 @@ public class Loja {
 		}
 		System.out.println("Placa não encontrada!!!");
 		Operacao.operacoes();
-		imput.close();
 
 	}
 
 	public static void buscarMarcaModelo() {
 		System.out.println("Digite a marca ou modelo do carro: ");
-		System.out.println("Se houver a marca/modelo desejado se exibida uma lista!!");
-		
 		Carro carro = new Carro();
 		String marcaModelo = imput.next();
 		carro.setMarca(marcaModelo);
@@ -125,16 +121,16 @@ public class Loja {
 		for (int i = 0; i < cadastro.size(); i++) {
 			if (cadastro.get(i).getMarca().equals(carro.getMarca())) {
 				System.out.println(cadastro.get(i));
-				//Operacao.operacoes();
+				Operacao.operacoes();
 
 			} else if (cadastro.get(i).getModelo().equals(carro.getModelo())) {
 				System.out.println(cadastro.get(i));
-				//Operacao.operacoes();
+				Operacao.operacoes();
 
 			}
 		}
+		System.out.println("Placa não encontrada!!!");
 		Operacao.operacoes();
-		imput.close();
 
 	}
 
@@ -144,9 +140,6 @@ public class Loja {
 			System.out.println(cadastro.get(i).getAno());
 		}
 		Operacao.operacoes();
-		imput.close();
 	}
-	
 
 }
-

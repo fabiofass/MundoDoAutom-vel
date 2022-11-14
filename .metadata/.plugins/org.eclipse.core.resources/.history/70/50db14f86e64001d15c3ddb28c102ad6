@@ -75,7 +75,6 @@ public class Loja {
 		System.out.println("\n");
 		System.out.println("------------------------------------------------------");
 		Operacao.operacoes();
-		imput.close();
 
 	}
 
@@ -83,6 +82,7 @@ public class Loja {
 		if (cadastro.size() > 0) {
 			for (Carro carro : cadastro) {
 				System.out.println(carro);
+				Operacao.operacoes();
 			}
 		} else {
 			System.out.println("\n");
@@ -90,9 +90,9 @@ public class Loja {
 			System.out.println("--- Não há carros cadastrados!! ---");
 			System.out.println("\n");
 			System.out.println("------------------------------------------------------");
+			Operacao.operacoes();
 
 		}
-		Operacao.operacoes();
 
 	}
 
@@ -104,20 +104,17 @@ public class Loja {
 			if (cadastro.get(i).getPlaca().equals(carro.getPlaca())) {
 				System.out.println(cadastro.get(i));
 				Operacao.operacoes();
-
+				
+			} else {
+				System.out.println("Placa não encontrada!!!");
+				Operacao.operacoes();
 			}
-
 		}
-		System.out.println("Placa não encontrada!!!");
-		Operacao.operacoes();
-		imput.close();
 
 	}
 
 	public static void buscarMarcaModelo() {
 		System.out.println("Digite a marca ou modelo do carro: ");
-		System.out.println("Se houver a marca/modelo desejado se exibida uma lista!!");
-		
 		Carro carro = new Carro();
 		String marcaModelo = imput.next();
 		carro.setMarca(marcaModelo);
@@ -125,28 +122,24 @@ public class Loja {
 		for (int i = 0; i < cadastro.size(); i++) {
 			if (cadastro.get(i).getMarca().equals(carro.getMarca())) {
 				System.out.println(cadastro.get(i));
-				//Operacao.operacoes();
-
+				Operacao.operacoes();
 			} else if (cadastro.get(i).getModelo().equals(carro.getModelo())) {
 				System.out.println(cadastro.get(i));
-				//Operacao.operacoes();
-
+				Operacao.operacoes();
+			} else {
+				System.out.println("Marca/Modelo não encontrado!!");
+				Operacao.operacoes();
 			}
 		}
-		Operacao.operacoes();
-		imput.close();
+
 
 	}
 
-	public static void listarPorAno() {
-		for (int i = 0; i < cadastro.size(); i++) {
-			System.out.println("ano : ");
-			System.out.println(cadastro.get(i).getAno());
-		}
-		Operacao.operacoes();
-		imput.close();
-	}
-	
+	public static void buscarPorAno() {
+		System.out.println("Digite o ano do carro: ");
+		Carro carro = new Carro();
 
+		Operacao.operacoes();
+
+	}
 }
-

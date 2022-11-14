@@ -41,7 +41,6 @@ public class Operacao {
 			break;
 
 		case 4:
-			Loja.listarPorAno();
 			break;
 
 		case 5:
